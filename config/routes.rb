@@ -1,4 +1,13 @@
 Rails.application.routes.draw do
+  namespace :admin do
+    get 'categories/new'
+    get 'categories/create'
+    get 'categories/edit'
+    get 'categories/update'
+    get 'categories/destroy'
+    get 'categories/index'
+    get 'categories/show'
+  end
   get 'categories/show'
   namespace :admin do
     get 'posts/new'
