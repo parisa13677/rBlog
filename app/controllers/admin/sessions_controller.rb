@@ -1,4 +1,7 @@
-class Admin::SessionsController < ApplicationController
+# frozen_string_literal: true
+
+# this is a sessions controller
+class Admin::SessionsController < Admin::ApplicationController
   def new
   end
 

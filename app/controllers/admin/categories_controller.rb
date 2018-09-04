@@ -1,4 +1,7 @@
-class Admin::CategoriesController < ApplicationController
+# frozen_string_literal: true
+
+# this is a categories controller
+class Admin::CategoriesController < Admin::ApplicationController
   def new
   end
 

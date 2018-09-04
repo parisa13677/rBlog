@@ -1,4 +1,7 @@
-class Admin::PostsController < ApplicationController
+# frozen_string_literal: true
+
+# this is a users controller
+class Admin::PostsController < Admin::ApplicationController
   def new
   end
 

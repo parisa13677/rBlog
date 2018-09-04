@@ -1,6 +1,7 @@
-this is Admin controller
+# frozen_string_literal: true
 
-class Admin::UsersController < ApplicationController
+# this is a users controller
+class Admin::UsersController < Admin::ApplicationController
   def index
   end
 
