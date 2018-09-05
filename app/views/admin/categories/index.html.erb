@@ -3,21 +3,16 @@ class: 'btn btn-primary pull-right'%></h2>
 <table class="table table-striped">
   <tr>
     <th>Category Title</th>
+    <th>Create Date</th>
     <th>Action</th>
   </tr>
+  <% @categories.each do |category| %>
   <tr>
-    <td>Category Number One</td>
-    <td><a href="#" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-
-    danger">Delete</a></td>
+    <td><% category.name %></td>
+    <td><%= category.created_at%>
+    <td><%= link_to "Edit",edit_admin_category_path(category), class:'btn
+    btn-primary' %><%= link_to "Delete", admin_category_path(category), class:
+    'btn btn-danger', method: :delete, date: {confirm: 'Are you sure'}%></td>
   </tr>
-  <tr>
-    <td>Category Number Two</td>
-    <td><a href="#" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-
-    danger">Delete</a></td>
-  </tr>
-  <tr>
-    <td>Category Number Three</td>>
-    <td><a href="#" class="btn btn-primary">Edit</a> <a href="#" class="btn btn-
-    danger">Delete</a></td>
-  </tr>
+  <% end %>
   </table>
