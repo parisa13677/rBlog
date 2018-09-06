@@ -28,4 +28,8 @@ class User < ApplicationRecord
     end
   end
 
+  def self.search(query)
+    where('name like ? or body email ?', "%#{query}%", "%#{query}%")
+  end
+
 end
