@@ -2,6 +2,5 @@
 
 # this is a about controller
 class AboutController < ApplicationController
-  def index
-  end
+  def index; end
 end

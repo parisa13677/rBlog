@@ -4,62 +4,63 @@
     <title>RBlog</title>
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
-    <%= stylesheet_link_tag    'admin/application', media: 'all', 'data-turbolinks-track': 'reload' %>
+
+    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
-    <nav class="navbar navbar-expand-md navbar-default bg-default">
+     <nav class="navbar navbar-expand-md navbar-default bg-default">
         <a class="navbar-brand" href="index.html"><h1>rBlog</h1></a>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault"
-      aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarsExampleDefault" aria-controls="navbarsExampleDefault" aria-expanded="false" aria-label="Toggle navigation">
         <span class="navbar-toggler-icon"></span>
       </button>
+
       <div class="collapse navbar-collapse" id="navbarsExampleDefault">
         <ul class="navbar-nav mr-auto">
           <li class="nav-item active" style="padding-right: 20px">
-            <%= link_to "Home", root_path %>
+            <a class="nav-link"><%= link_to "Home", root_path%> <span class="sr-only">(current)</span></a>
           </li>
           <li class="nav-item" style="padding-right: 20px">
-            <%= link_to "About", about_path %>
+            <a class="nav-link disabled"><%= link_to "About", about_path%></a>
           </li>
           <li class="nav-item" style="padding-right: 20px">
-            <%= link_to "Contact", contact_path%>
+            <a class="nav-link disabled"><%= link_to "Contact", contact_path%></a>
           </li>
         </ul>
-        <form class="form-inline my-2 my-lg-0">
-          <input class="form-control mr-sm-2" type="text" placeholder="Search" aria-label="Search">
-          <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
-        </form>
+        <%= render 'partials/search'%>
       </div>
     </nav>
     <section>
       <div class="container">
         <div class="row">
           <div class="col-md-8" >
-        <!-- Alert & Messages -->
-        <% if flash[:notice] %>
-          <div class="alert alert-success"><%= flash[:notice] %></div>
-        <% end %>
-
-        <% if flash[:notice] %>
-          <div class="alert alert-danger"><%= flash[:alert] %></div>
-        <% end %>
+           <!--Alerts & Messages-->
+           <% if flash[:notice]%>
+            <div class="alert alert-success"><%= flash[:notice] %></div>
+           <% end %>
+           <% if flash[:alert]%>
+            <div class="alert alert-danger"><%= flash[:alert] %></div>
+           <% end %>
             <%= yield %>
           </div>
           <div class="col-md-4" >
-            <%= render 'partials/sidebar'%>
-          </div>
+           <%= render 'partials/sidebar'%>
+
+            </div>
         </div>
+
       </div>
     </section>
-    <%= render 'partials/footer'%>
+   <%= render 'partials/footer'%>
+
     <!-- Bootstrap core JavaScript
     ================================================== -->
     <!-- Placed at the end of the document so the pages load faster -->
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
     <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script>
+
     <script src="js/bootstrap.js"></script>
   </body>
 </html>

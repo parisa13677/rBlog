@@ -1,3 +1,10 @@
+<script>
+  $(function() {
+    $('f.text_area#edit').editable({
+      inlineMode: false
+    })
+  });
+</script>
 <h2> Add New Post</h2>
 <%= form_for [:admin, @post] do |f|%>
     <!--check for errors-->
@@ -37,7 +44,7 @@
 
     <div class="form-group">
        <%= f.label :body %>
-       <%= f.text_area :body , class:'form-control' %>
+       <%= f.text_area :body , class:'form-control', id:'edit' %>
     </div>
 
     <br>
