@@ -49,22 +49,29 @@ body {
   height: 38px;
 }
 
+.search-form .form-group {
+  display: inline-block;
+  margin-bottom: 0;
+  vertical-align: middle;
+}
+
+
 .search-form .btn {
   border: 0;
   height: 38px;
   margin-top: 0;
   border-radius: 0;
-  margin-left: 5px;
+  margin-left: -5px;
 }
 
 .search-form .form-control {
- border: none;
- border-radius:0;
+ background: #f4f4f4;
+ border : 1px solid #eee;
 }
 
 .btn {
-  border: 1px #ccc solid;
-  background: #fff;
+  border: none;
+  border-radius:0;
 }
 
 .btn-primary {
@@ -95,12 +102,21 @@ box-sizing: border-box;
   padding: 0;
 }
 
-.post small {
+small {
 background: $primary-color;
 color: #fff;
 display: block;
 margin: 10px 0;
 padding: 5px 10px;
+}
+
+.post .btn {
+  display: block;
+  margin-top: 20px;
+}
+
+.comments img{
+  width:100%;
 }
 
 footer {
