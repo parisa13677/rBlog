@@ -2,6 +2,8 @@
 
 # this is a categories controller
 class Admin::CategoriesController < Admin::ApplicationController
+  before_action :verify_logged_in
+
   def new
     @page_title = 'Add Category'
     @category = Category.new
@@ -50,8 +52,8 @@ class Admin::CategoriesController < Admin::ApplicationController
     end
   end
 
-  def show
-  end
+  def show; end
+
 
 private
 

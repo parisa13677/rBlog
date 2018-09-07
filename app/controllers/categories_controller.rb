@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# class CategoriesController
+# class Categories Controller
 class CategoriesController < ApplicationController
   def show
     @category = Category.find(params[:id])

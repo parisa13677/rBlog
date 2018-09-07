@@ -2,6 +2,8 @@
 
 # this is a users controller
 class Admin::UsersController < Admin::ApplicationController
+  before_action :verify_logged_in
+
   def index
     if params[:search]
       @users = User.search(params[:search]).all.order('created_at DESC').paginate(:per_page => 10, :page => params[:page])
@@ -46,7 +48,7 @@ class Admin::UsersController < Admin::ApplicationController
     redirect_to admin_users_path
   end
 
-  private
+private
 
   def user_params
     params.require(:user).permit(:name, :email, :password)

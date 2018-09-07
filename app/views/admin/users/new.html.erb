@@ -1,7 +1,7 @@
 <h2> Add New User</h2>
 <%= form_for [:admin, @user] do |f|%>
     <!--check for errors-->
-    <%if @user.errors.any?%>
+    <%if @user.errors.any? %>
       <% @user.errors.full_messages.each do |msg| %>
         <!--show errors-->
         <div class="alert-danger"><%= msg %></div>
@@ -9,25 +9,25 @@
     <% end %>
 
     <div class="form-group">
-       <%= f.label :name %>
-       <%= f.text_field :name, class: 'form-control' %>
+       <%= f.label :name %><br />
+       <%= f.text_field :name, class: 'form-control' %> <br />
     </div>
 
     <div class="form-group">
-       <%= f.label :email %>
-       <%= f.select :email,  class: 'form-control'%>
+       <%= f.label :email %><br />
+       <%= f.text_field :email,  class: 'form-control'%><br />
     </div>
 
     <div class="form-group">
-       <%= f.label :password %>
-       <%= f.password_field :password, class: 'from-control'%>
+       <%= f.label :password %><br />
+       <%= f.password_field :password, class: 'from-control'%><br />
     </div>
 
     <div class="form-group">
-       <%= f.label :password_confirmation %>
-       <%= f.password_field :password_confirmation, class: 'from-control'%>
+       <%= f.label :password_confirmation %><br />
+       <%= f.password_field :password_confirmation, class: 'from-control'%><br />
     </div>
-    <br>
+
    <%= f.submit "submit", class:'btn btn-primary'%>
    <%=link_to 'Cancel', admin_users_path, class:'btn btn-default'%>
 

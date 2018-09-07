@@ -1,3 +1,6 @@
+# frozen_string_literal: true
+
+# this is a class  Post
 class Post < ApplicationRecord
   belongs_to :category
   belongs_to :user

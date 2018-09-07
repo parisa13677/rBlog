@@ -1,6 +1,6 @@
 # frozen_string_literal: true
 
-# class PostsController
+# class Posts Controller
 class PostsController < ApplicationController
   def index
     if params[:search]
