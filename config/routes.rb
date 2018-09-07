@@ -2,11 +2,19 @@ Rails.application.routes.draw do
   get 'contact' => 'contacts#new'
   get 'contacts/create'
   get 'about' => 'about#index'
+
   namespace :admin do
     get "login" => "sessions#new", :as => "login"
-    get 'sessions/new'
+  end
+
+  namespace :admin do
+    get "logout" => "sessions#destroy", :as => "logout"
+  end
+
+  namespace :admin do
     get 'sessions/create'
   end
+
   namespace :admin do
     get 'users/index'
     get 'users/show'
@@ -42,7 +50,7 @@ Rails.application.routes.draw do
   get 'posts/index'
   get 'posts/show'
 
-  resources :categories, :posts, :users
+  resources :categories, :posts, :comments
   resources "contacts", only: [:new, :create ]
 
   namespace :admin do
